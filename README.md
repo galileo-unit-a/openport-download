@@ -33,6 +33,11 @@ the `*.galileo.localhost` names, and (macOS and Linux only) permission to use po
 3. Click **Yes** when Windows asks to allow changes, then **Next**, then **Finish**.
    The app starts, and it also has a desktop shortcut.
 
+> **"Smart App Control blocked an app that may be unsafe"?** Windows 11 blocks unsigned apps, and this
+> message has no "Run anyway". Open **Settings → Privacy & security → Windows Security →
+> App & browser control → Smart App Control settings**, choose **Off**, then start the app from the Start menu.
+> On some Windows versions it can't be turned back on without resetting Windows.
+
 ### macOS
 1. Double-click `openport-galileo-macos.pkg`.
 2. macOS will say it **"cannot verify"** the package. Click **Done** (not "Move to Trash").
