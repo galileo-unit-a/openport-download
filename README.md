@@ -27,19 +27,32 @@ the app, AWS's Session Manager component, the galileo certificate (`GALILEO-ROOT
 the `*.galileo.localhost` names, and (macOS and Linux only) permission to use port 443.
 
 ### Windows
-1. Double-click `openport-galileo-windows-setup.exe`.
-2. Windows may show **"Windows protected your PC"**, because the app has no paid code-signing certificate.
-   Click **More info**, then **Run anyway**.
-3. Click **Yes** when Windows asks to allow changes, then **Next**, then **Finish**.
+The app has no paid code-signing certificate, so the browser and Windows warn that it is
+"not commonly downloaded" or from an "unknown publisher". This is expected; the steps below get past it.
+
+1. **Keep the download.** If the browser holds the file back:
+   - **Edge:** in the downloads list, hover over the file → **⋯** → **Keep** → **Show more** → **Keep anyway**.
+   - **Chrome:** in the downloads list, click **Keep** (or **⋯** → **Download suspicious file**).
+2. *(Optional, to be sure the file is genuine)* In PowerShell:
+   `Get-FileHash $HOME\Downloads\openport-galileo-windows-setup.exe` and compare the hash with the
+   `.exe` line in `SHA256SUMS.txt` on the [Releases page](https://github.com/galileo-unit-a/openport-download/releases/latest)
+   (upper/lower case does not matter).
+3. Double-click `openport-galileo-windows-setup.exe`. Windows shows **"Windows protected your PC"**:
+   click **More info**, then **Run anyway**. (If you see no **Run anyway** button: right-click the file →
+   **Properties** → tick **Unblock** at the bottom → **OK**, then double-click it again.)
+4. Click **Yes** when Windows asks to allow changes, then **Next**, then **Finish**.
    The app starts, and it also has a desktop shortcut.
 
 > **"Smart App Control blocked an app that may be unsafe"?** Windows 11 blocks unsigned apps, and this
 > message has no "Run anyway". Open **Settings → Privacy & security → Windows Security →
-> App & browser control → Smart App Control settings**, choose **Off**, then start the app from the Start menu.
+> App & browser control → Smart App Control settings**, choose **Off**, then run the installer (or the app) again.
 > On some Windows versions it can't be turned back on without resetting Windows.
 
+If your computer is managed by an organization that blocks unknown programs entirely, ask its IT
+administrator to allow the file, or use another computer.
+
 ### macOS
-1. Double-click `openport-galileo-macos.pkg`.
+1. Double-click `openport-galileo-macos.pkg` (Safari saves it in **Downloads**).
 2. macOS will say it **"cannot verify"** the package. Click **Done** (not "Move to Trash").
 3. Open **System Settings → Privacy & Security**. Scroll down to the message about
    *openport-galileo-macos.pkg* and click **Open Anyway**, then enter your password.
